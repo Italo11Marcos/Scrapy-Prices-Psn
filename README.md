@@ -1,5 +1,5 @@
 # Scrapy-Prices-Psn
-Scrapy prices of some games on the psn page
+Django app that scrapes prices of some games on the psn page
 
 Link deployed in Heroku: https://django-psn-scrapy-im.herokuapp.com/
 
