@@ -1,0 +1,171 @@
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrapy Prices</title>
+</head>
+<body>
+    <div class="container text-center">
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <p>
+                Última atualização: {{ lastUpdate.date|date:'d-m-y : H:i' }}
+                <button type="submit" class="btn btn-success">Carregar</button>
+            </p>
+        </form>
+    </div>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-header">Greedfall</div>
+                <div class="card-body">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Preço</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for obj in greedfall %}
+                            <tr>
+                                <td>{{ obj.price }}</td>
+                                <td>{{ obj.date|date:'d-m-y' }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">The Witcher 3</div>
+                <div class="card-body">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Preço</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for obj in witcher %}
+                            <tr>
+                                <td>{{ obj.price }}</td>
+                                <td>{{ obj.date|date:'d-m-y' }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Until Dawn</div>
+                <div class="card-body">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Preço</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for obj in untildawn %}
+                            <tr>
+                                <td>{{ obj.price }}</td>
+                                <td>{{ obj.date|date:'d-m-y' }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">AC Valhalla</div>
+                <div class="card-body">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Preço</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for obj in acvalhalla %}
+                            <tr>
+                                <td>{{ obj.price }}</td>
+                                <td>{{ obj.date|date:'d-m-y' }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">God of War</div>
+                <div class="card-body">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Preço</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for obj in godofwar %}
+                            <tr>
+                                <td>{{ obj.price }}</td>
+                                <td>{{ obj.date|date:'d-m-y' }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Days Gone</div>
+                <div class="card-body">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Preço</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for obj in daysgone %}
+                            <tr>
+                                <td>{{ obj.price }}</td>
+                                <td>{{ obj.date|date:'d-m-y' }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Immortals</div>
+                <div class="card-body">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Preço</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for obj in immortals %}
+                            <tr>
+                                <td>{{ obj.price }}</td>
+                                <td>{{ obj.date|date:'d-m-y' }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
